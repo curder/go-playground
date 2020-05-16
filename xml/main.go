@@ -47,6 +47,6 @@ func main() {
 	}
 
 	for _, video = range videos.Video {
-		fmt.Printf("%#v\n\n", video)
+		fmt.Printf("%#v\n\n", video.CreatedAt.Local().Format("2006-01-02 15:04:05"))
 	}
 }
