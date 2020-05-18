@@ -13,9 +13,9 @@ import (
 
 func main() {
 	var (
-		bucket        = "web-test-private"
-		accessKey     = "gz0kbP4_qoYv8lsu1qHg7iWPQJ5Yj4Gq1dgTH63v"
-		secretKey     = "DDNztHAYD32hB75OF_vH8S-sQ1k-6xoR04-TcR33"
+		bucket        = ""
+		accessKey     = ""
+		secretKey     = ""
 		mac           *auth.Credentials
 		useHTTPS      = true
 		useCdnDomains = true
