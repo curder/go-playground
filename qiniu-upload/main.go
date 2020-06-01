@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"os"
 
 	"github.com/qiniu/api.v7/v7/auth"
 	"github.com/qiniu/api.v7/v7/storage"
@@ -13,18 +14,18 @@ import (
 
 func main() {
 	var (
-		bucket        = ""
-		accessKey     = ""
-		secretKey     = ""
+		bucket        = os.Getenv("QINIU_TEST_BUCKET")
+		accessKey     = os.Getenv("QINIU_ACCESS_KEY")
+		secretKey     = os.Getenv("QINIU_SECRET_KEY")
 		mac           *auth.Credentials
-		useHTTPS      = true
-		useCdnDomains = true
+		useHTTPS      = false
+		useCdnDomains = false
 		zone          *storage.Zone
 		err           error
 		formUploader  *storage.FormUploader
 
-		remoteResourceURL = "https://video.vzaar.com/vzaar/tsj/-V9/target/tsj-V9tTCoiQ_1440_810_2624.mp4?response-content-disposition=inline&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJ74MFWNVAFH6P7FQ%2F20200517%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200517T082736Z&X-Amz-Expires=3660&X-Amz-SignedHeaders=host&X-Amz-Signature=b676bd41d511f716a5bdd8018d6a669eda9054070a6b33d45527bf83e2bf5239"
-		key               = "tsj-V9tTCoiQ_1440_810_2624.mp4"
+		remoteResourceURL = os.Getenv("QINIU_TEST_FETCH_URL")
+		key               = os.Getenv("QINIU_TEST_SAVE_FILE_NAME")
 		// remoteResourceURL = "https://resources.vzaar.com/vzaar/tsj/-V9/target/tsj-V9tTCoiQ_thumb.jpg"
 		// key               = "tsj-V9tTCoiQ_thumb.jpg"
 

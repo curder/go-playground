@@ -14,6 +14,7 @@ func RunSomething() {
 		isTaskFinished = 1
 		task1()
 		task2()
+		task3()
 		isTaskFinished = 0
 		log.Println("task end")
 	}
@@ -21,9 +22,14 @@ func RunSomething() {
 
 func task1() {
 	log.Println("task1 func running...")
-	time.Sleep(time.Second * 2)
+	time.Sleep(time.Second * 5)
 }
 
 func task2() {
 	log.Println("task2 func running...")
+}
+
+func task3() {
+	log.Println("task3 func running...")
+	time.Sleep(time.Second * 6)
 }
